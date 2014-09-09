@@ -1,0 +1,21 @@
+footer {
+	background: $color__background-footer;
+	font-size: $footer_font;
+
+	.site-info {
+		text-align: center;
+
+		address {
+			margin: 1.5em 0 0 0;
+		}
+
+		p {
+			margin: 0;
+		}
+
+		a {
+			text-decoration: none;
+			color: $color__text-screen;
+		}
+	}
+}
