@@ -1,0 +1,86 @@
+.nav-social {
+	display: none;
+	height: 0;
+
+	@media screen and (min-width: 768px) and (max-width: 929px) {
+		display: inherit;
+		transform: translate(87%, -37px);
+	}
+	
+	@media screen and (min-width: 930px) {
+		display: inherit;
+		transform: translate(90%, -160px);
+	}
+
+
+	.screen-reader-text {
+		position: absolute;
+		top:      -9999em;
+		left:     -9999em;
+	}
+
+	.menu-items {
+		list-style: none;
+		margin: 0.5em 0.5em 0 0;
+
+		.menu-item {
+			display:  inline-block;
+			position: relative;
+			padding: 0.1em;
+
+			a {
+				text-decoration: none;
+				font-size: 0;
+
+				&:before {
+					font-size: 40px !important;
+					color: $color__text-screen;
+				}
+			}
+
+			a[href*="facebook.com"]:before {
+				@include fa-icon();
+				content: $fa-var-facebook-square;
+			}
+			a[href*="twitter.com"]:before {
+				@include fa-icon();
+				content: $fa-var-twitter-square;
+			}
+			a[href*="plus.google.com"]:before {
+				@include fa-icon();
+				content: $fa-var-google-plus-square;
+			}
+			a[href*="pinterest.com"]:before {
+				@include fa-icon();
+				content: $fa-var-pinterest-square;
+			}
+			a[href*="tumblr.com"]:before {
+				@include fa-icon();
+				content: $fa-var-tumblr-square;
+			}
+			a[href*="youtube.com"]:before {
+				@include fa-icon();
+				content: $fa-var-youtube-square;
+			}
+			a[href*="flickr.com"]:before {
+				@include fa-icon();
+				content: $fa-var-flickr;
+			}
+			a[href*="instagram.com"]:before {
+				@include fa-icon();
+				content: $fa-var-instagram;
+			}
+			a[href*="linkedin.com"]:before {
+				@include fa-icon();
+				content: $fa-var-linkedin-square;
+			}
+			a[href$=".rss"]:before, 
+			a[href$="rss.xml"]:before, 
+			a[href*="/feed/"]:before,
+			a[href*="/rss/"]:before {
+				@include fa-icon();
+				content: $fa-var-rss-square;
+			}
+		}
+	}
+}

@@ -46,6 +46,8 @@ and Blueprint http://www.blueprintcss.org/
 --------------------------------------------------------------*/
 @import "sass/variables-site/variables-site";
 @import "sass/mixins/mixins-master";
+@import "sass/mixins/slushman";
+@import "sass/mixins/serena";
 
 /*--------------------------------------------------------------
 1.0 Reset
@@ -56,6 +58,7 @@ and Blueprint http://www.blueprintcss.org/
 2.0 Typography
 --------------------------------------------------------------*/
 @import "sass/typography/typography";
+@import "sass/fontawesome/font-awesome";
 
 /*--------------------------------------------------------------
 3.0 Elements
@@ -98,6 +101,9 @@ and Blueprint http://www.blueprintcss.org/
 @import "sass/site/site";
 @import "sass/site/header";
 @import "sass/site/footer";
+@import "sass/site/content";
+@import "sass/site/home";
+@import "sass/layout/content-sidebar";
 
 /*--------------------------------------------------------------
 11.0 Infinite scroll

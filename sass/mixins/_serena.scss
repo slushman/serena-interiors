@@ -1,0 +1,18 @@
+@mixin topcorners( $topleft: 10px, $topright: 10px, $botright: 0, $botleft: 0 ) {
+	@include border-radius( $topleft $topright $botright $botleft );
+}
+
+@mixin shadows() {
+	@include shadow( 1px, 1px, 12px, -1px );
+}
+
+@mixin diaggrad() {
+	background	: #167338; /* Old browsers */
+	background	: -moz-linear-gradient(-45deg,  #167338 0%, #ccff33 100%) !important; /* FF3.6+ */
+	background	: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#167338), color-stop(100%,#ccff33)) !important; /* Chrome,Safari4+ */
+	background	: -webkit-linear-gradient(-45deg,  #167338 0%,#ccff33 100%) !important; /* Chrome10+,Safari5.1+ */
+	background	: -o-linear-gradient(-45deg,  #167338 0%,#ccff33 100%) !important; /* Opera 11.10+ */
+	background	: -ms-linear-gradient(-45deg,  #167338 0%,#ccff33 100%) !important; /* IE10+ */
+	background	: linear-gradient(135deg,  #167338 0%,#ccff33 100%) !important; /* W3C */
+	filter		: progid:DXImageTransform.Microsoft.gradient( startColorstr='#167338', endColorstr='#ccff33',GradientType=1 ) !important; /* IE6-9 fallback on horizontal gradient */
+}

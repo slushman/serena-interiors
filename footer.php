@@ -9,6 +9,7 @@
 ?>
 
 	</div><!-- #content -->
+</div><!-- #page -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
@@ -21,7 +22,7 @@
 			<p><a href="mailto:info@serenainteriors.com">info@serenainteriors.com</a></p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
-</div><!-- #page -->
+
 
 <?php wp_footer(); ?>
 

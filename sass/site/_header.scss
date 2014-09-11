@@ -1,0 +1,35 @@
+header.site-header {
+	background: white;
+	width: $size__site-main;
+	z-index: 1;
+	position: relative;
+
+	@media screen and (min-width: 768px) {
+		height: 210px;
+	}
+
+	@media only screen and (min-width: 930px) {
+		max-width: $maxwidth;		
+		margin: 62px auto 0;
+		height: 180px;
+
+		@include border-radius(10px);
+	}
+}
+
+.site-title,
+.site-description {
+	line-height: 0;
+	@include hidetext;
+}
+
+.site-branding {
+
+}
+
+.site-logo {
+	@media only screen and (min-width: 930px) {
+		height: 150px;
+		margin: 0.5em 0 0 1.25em;
+	}
+}

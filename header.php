@@ -14,6 +14,8 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 
 <?php wp_head(); ?>
 </head>
@@ -24,12 +26,20 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.jpg" class="site-logo" alt="Serena Interiors - bringing joy tio everyday living" /></a>
+			<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</div>
 
+		<?php 
+
+		get_template_part( 'menu', 'social' );
+
+		//wp_nav_menu( array( 'theme_location' => 'social' ) ); ?>
+
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle"><?php _e( 'Primary Menu', 'serena-interiors' ); ?></button>
+			<button class="menu-toggle"><?php _e( 'Menu', 'serena-interiors' ); ?></button>
+			<a class="screen-reader-text skip-link" href="#content"><?php _e( 'Skip to content', 'the-craft' ); ?></a>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->

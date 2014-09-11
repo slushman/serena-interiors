@@ -1,0 +1,134 @@
+
+
+#soliloquy-container-42 {
+
+	@media only screen and (max-width: $maxwidth - 1) {
+		max-height: none !important;
+		margin-bottom: 3em !important;
+		@include diaggrad();
+		@include topcorners();
+
+		.soliloquy-viewport {
+			height: auto !important;
+		}
+	}
+
+	@media only screen and (min-width: 900px) and (max-width: $maxwidth) {
+		max-height: inherit !important;
+		height: 370px !important;
+	}
+
+	@media only screen and (min-width: $maxwidth) {
+		margin: 0 0 4em 0 !important;
+		max-width: 100% !important;
+
+	}
+
+	
+
+} // End of #soliloquy-container-42
+
+// This is the slide image
+.soliloquy-container {
+		
+	.soliloquy-item>a {
+
+		@media only screen and (max-width: $maxwidth - 1) {
+			margin-bottom: 1em;
+		}
+
+		@media only screen and (min-width: 900px) {
+			width: 642px !important;
+		}
+
+		@media only screen and (min-width: $maxwidth) {
+			transform: translate(-3em, -2em);
+			background: white;
+			padding: 1em 1.25em;
+			z-index: 10;
+			@include topcorners();
+			@include shadows();
+		}
+	}
+
+
+	.soliloquy-image {
+		@media only screen and (min-width: $maxwidth) {
+			margin: 0 !important;
+			width: 500px;
+		}
+	}
+
+	.soliloquy-caption-inside {
+		background: none !important;
+		padding: 0 !important;
+	}
+
+} // End of .soliloquy-container
+
+.soliloquy-fc-slider {
+
+	.soliloquy-caption {
+		display: inherit !important;
+		position: relative !important;
+		right: inherit !important;
+		left: inherit !important;
+		bottom: inherit !important;
+		top: inherit !important;
+		width: 100% !important;
+
+		@media only screen and (min-width: 900px) and (max-width: $maxwidth) {
+			transform: translate(150%, -110%);
+			background-color: rgba( 20, 20, 20, 0.5 );
+			border-radius: 5px;
+			padding: 0.5em;
+			width: 40% !important;
+		}
+
+		@media only screen and (min-width: $maxwidth) {
+			transform: translate(23em, -17.5em);
+			width: 585px !important;
+			height: 260px;
+		}
+	}
+}
+
+h2.soliloquy-fc-title,
+h2.soliloquy-fc-title a {
+
+	@media only screen and (min-width: $maxwidth) {
+		color: $color__text-screen !important;
+		float: left;
+		font-size: $slider_font !important;
+		width: 5em;
+		line-height: 36px;
+		margin: 17px 0 0 0 !important;
+	}
+}
+
+.soliloquy-fc-content.soliloquy-fc-title-above {
+	
+	@media only screen and (min-width: $maxwidth) {
+		transform: translate(4px, 15px);
+		width: 565px;
+		padding: 0.75em;
+	}
+
+	p {
+		line-height: 1.5em;
+	}
+}
+
+li.soliloquy-item.soliloquy-item-1.soliloquy-image-slide.soliloquy-active-slide {
+	padding: 1em;
+	width: 100% !important;
+
+	@media only screen and (min-width: $maxwidth) {
+		background-image: url(images/greenbackground.jpg) !important;
+		background-position: right center;
+		background-repeat: no-repeat;
+		height: 260px !important;
+		@include topcorners();
+		@include shadows();
+	}
+}

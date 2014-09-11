@@ -1,13 +1,93 @@
 .widget {
-	margin: 0 0 1.5em;
+	padding			: 0 0 0.5em;
+	clear			: both;
+	position		: relative;
+	border			: 1px solid white;
+	margin 			: 0 0 1.5em 1em;
+
+	@include topcorners();
+	@include diaggrad();
 
 	/* Make sure select elements fit in widgets */
 	select {
 		max-width: 100%;
 	}
+
+	div,
+	ul,
+	.textwidget {
+		background	: white;
+		margin		: 0.2em 1em 1.25em -1em;
+		padding		: 0.5em;
+		list-style 	: none;
+		@include topcorners( 5px, 5px );
+		@include shadows();
+
+		p {
+			margin: 0;
+		}
+
+		// Triangle with gradient square on top - combined w/	&:after
+		&:before {
+			content				: "";
+			position			: absolute;
+			display				: block;
+			border				: 1.5em solid #8c8a8b;
+			border-right-width	: 1.5em;
+			border-left-color	: transparent;
+			border-width		: 17.5px 0 0 17.5px;
+			bottom				: 14px;
+			left				: -1em;
+		}
+
+		// Square with gradient trans to white (top to bottom)
+		&:after {
+			content		: "";
+			position	: absolute;
+			display		: block;
+			bottom		: 14.4px;
+			left		: -18.5px;
+			background	: #8c8a8b; // Old browsers
+			background	: -moz-linear-gradient(top, transparent 0%, #ffffff 100%); // FF3.6+
+			background	: -webkit-gradient(linear, left top, left bottom, color-stop(0%,transparent), color-stop(100%,#ffffff)); // Chrome,Safari4+
+			background	: -webkit-linear-gradient(top, transparent 0%,#ffffff 100%); // Chrome10+,Safari5.1+
+			background	: -o-linear-gradient(top, transparent 0%,#ffffff 100%); // Opera 11.10+
+			background	: -ms-linear-gradient(top, transparent 0%,#ffffff 100%); // IE10+
+			background	: linear-gradient(to bottom, transparent 0%,#ffffff 100%); // W3C
+			filter		: progid:DXImageTransform.Microsoft.gradient( startColorstr='transparent', endColorstr='#ffffff',GradientType=0 ); // IE6-9
+			width		: 1em;
+			height		: 1em;
+		}
+	}
+}
+
+.widget-title {
+	color		: $color__background-footer;
+	text-align	: center;
+	padding-top	: 0.25em;
 }
 
 /* Search widget */
-.widget_search .search-submit {
-	display: none;
+.widget_search {
+	padding: 1em;
+
+	.search-field {
+		width: 97%;
+	}
+
+	.search-submit {
+		display: none;
+	}
+}
+
+.home-promo {
+	width: 100%;
+}
+
+.home {
+	
+	.widget-title{
+		font-size: 2rem;			
+	}
+
 }

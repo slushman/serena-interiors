@@ -3,56 +3,157 @@
 	display: block;
 	float: left;
 	width: 100%;
+	font-size: $nav_font;
+
+	@media screen and (min-width: 768px) and (max-width:929px) {
+		width: 34%;
+		transform: translate( 0, -31px );
+	}
+
+	@media only screen and (min-width: 930px) {
+		transform: translate(0, -1.8em);
+	}
 
 	ul {
 		list-style: none;
 		margin: 0;
-		padding-left: 0;
+		padding: 0.5em 1em;
+
+		@media screen and (min-width: 768px) {
+			padding: 0;
+		}
+
+		@media screen and (min-width: 930px) {
+			float: right;
+			margin-right: 1.5em;
+		}
 
 		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 1.5em;
-			left: -999em;
-			z-index: 99999;
+			display: inherit;
+			padding-bottom: 0;
 
-			ul {
+			@media screen and (min-width: 768px) and (max-width:929px) {
+				padding: 0.25em 0.5em;
+			}
+
+			@media screen and (min-width: 930px) {
+				box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+				float: left;
+				position: absolute;
+				top: 1.5em;
 				left: -999em;
-				top: 0;
+				z-index: 99999;
+
+				ul {
+					left: -999em;
+					top: 0;
+				}
 			}
 
 			li {
-				&:hover > ul {
-					left: 100%;
+				@media only screen and (max-width: 929px) {
+					padding-left: 0;
+				}
+
+				@media screen and (min-width: 930px) {
+					border: none;
+					background: $color__background-footer;
+
+					&:hover > ul {
+						left: 100%;
+						transition: all 0.5s ease;
+					}
+
+					&:hover {
+						background: $color__text-screen;
+						color: $color__background-footer;
+					}
+				}
+
+				&:first-child {
+					padding-top: 0;
+				}
+
+				&:last-child {
+					padding-bottom: 0;
 				}
 			}
 
 			a {
-				width: 200px;
+
+				@media screen and (min-width: 768px) {
+					width: 168px;
+					color: $color__text-screen;
+					padding: 0.25em;
+				}
 			}
 
 			:hover > a {
+
 			}
 
 			a:hover {
+				
 			}
 		}
 
 		li:hover > ul {
-			left: auto;
+			left: 0;
 		}
 	}
 	li {
-		float: left;
-		position: relative;
+		padding: 0.25em;
+
+		@media screen and (min-width: 768px) and (max-width:929px) {
+			padding: 0.25em 1em;
+		}
+
+		@media screen and (min-width: 930px) {
+			position: relative;
+			padding: 0 1em;
+
+			&:first-child {
+				border: none;
+			}
+		}
+
+		@media screen and (min-width: 930px) {
+			&.current-menu-item,
+			&.current-menu-parent,
+			&.current_page_item,
+			&.current-menu-ancestor {
+				background: $color__text-screen;
+
+				> a {
+					color: $color__background-footer;
+				}
+			}
+		}
+
+		@media only screen and (min-width: 930px) {
+			float: left;
+			border-left: 1px solid $color__text-screen;
+		}
 
 		&:hover > a {
+			color: $color__background-footer;
+			transition: all 0.5s ease;			
+		}
+
+		@media only screen and (min-width: 930px) {
+
+			&:hover {
+				@media screen and (min-width: 768px) {
+					background: $color__text-screen;
+					transition: all 0.5s ease;
+				}
+			}
 		}
 	}
 	a {
 		display: block;
 		text-decoration: none;
+		color: $color__text-screen;
 	}
 
 	.current_page_item a,
@@ -65,14 +166,62 @@
 	display: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 767px) {
 	.menu-toggle,
 	.main-navigation.toggled .nav-menu {
 		display: block;
+		width: 100%;
+		background: #95c949;
+		border: none;
+		line-height: 1.25em;
+		font-size: 1.25em;
+		box-shadow: none;
+		border-radius: 0;
+		text-shadow: none;
+		color: $color__text-screen;
+
+		&:hover {
+			border: none;
+			box-shadow: none;
+			background: #a8d16b;
+		}
 	}
 
 	.main-navigation ul {
 		display: none;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width:929px) {
+	.menu-toggle,
+	.main-navigation.toggled .nav-menu {
+		display: block;
+		width: 100%;
+		background: #95c949;
+		border: none;
+		line-height: 1.25em;
+		font-size: 1.25em;
+		box-shadow: none;
+		border-radius: 0;
+		text-shadow: none;
+		color: $color__text-screen;
+		z-index: 9999;
+
+		&:hover {
+			border: none;
+			box-shadow: none;
+			background: #a8d16b;
+		}
+	}
+
+	.main-navigation ul {
+		display: none;
+	}
+
+	.menu-main-container {
+		position: absolute;
+		z-index: 9999;
+		width: 272px;
 	}
 }
 
@@ -97,3 +246,4 @@
 	text-align: right;
 	width: 50%;
 }
+

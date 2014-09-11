@@ -1,6 +1,10 @@
-footer {
+footer#colophon {
 	background: $color__background-footer;
 	font-size: $footer_font;
+	padding: 2em 2em 7em;
+	width: 100%;
+	float: left;
+	@include shadow( 1px, -1px, 20px, 1px, #b5b3b4 );
 
 	.site-info {
 		text-align: center;
@@ -11,6 +15,7 @@ footer {
 
 		p {
 			margin: 0;
+			line-height: 1em;
 		}
 
 		a {

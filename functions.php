@@ -43,6 +43,7 @@ function serena_interiors_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'serena-interiors' ),
+		'social' => __( 'Social Links', 'serena-interiors' ),
 	) );
 
 	/*
@@ -60,6 +61,11 @@ function serena_interiors_setup() {
 	add_theme_support( 'post-formats', array(
 		'aside', 'image', 'video', 'quote', 'link',
 	) );
+
+	/**
+	 * Enable support for Featured Images
+	 */
+	add_theme_support( 'post-thumbnails' );
 
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'serena_interiors_custom_background_args', array(
@@ -79,6 +85,33 @@ function serena_interiors_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'serena-interiors' ),
 		'id'            => 'sidebar-1',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Home Left', 'serena-interiors' ),
+		'id'            => 'home-left',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Home Center', 'serena-interiors' ),
+		'id'            => 'home-center',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Home Right', 'serena-interiors' ),
+		'id'            => 'home-right',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',

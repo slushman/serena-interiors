@@ -1,0 +1,61 @@
+@mixin hidetext() {
+	text-indent	: 100%;
+	overflow	: hidden;
+	white-space	: nowrap;
+}
+
+/**
+ * Responsive width
+ *
+ * This is based on a 12 column grid
+ * Margin is constant: 1.666%
+ *
+ * @param   $quantity   How many total columns will there be
+ * @param   $span       How many of grids should this span, default: 1
+ */
+@mixin column( $quantity, $span: 1, $margin: 1.6666666666667 ) {
+
+    $margins: $quantity * ( $margin * 2 );
+    $boxwidth: ( 100 - $margins ) / $quantity;
+    $width: percentage( $boxwidth / 100 );
+
+    @if ( $span > 1 ) {
+        // $width: percentage( ( ( $boxwidth * $span ) - ( $margin * $span ) ) / 100 );
+        $width: percentage( ( ( ( 100 / 12 ) * $span ) - ( $margin * 2 ) ) / 100 );
+    }
+
+    $marginperc: percentage( $margin / 100 );
+
+	width		: $width;
+	float		: left;
+	margin-left	: $marginperc;
+	margin-right: $marginperc;
+}
+
+@mixin headers() {
+    border: 0;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    clear: both;
+}
+
+/**
+ * Creates a shadow on an object
+ * 
+ * $x: h-shadow - horizontal positioning
+ * $y: v-shadow - vertical positioning
+ * $blur: blur - blur distance
+ * $spread: - spread - size of the shadow
+ * $color: color = the color of the shadow. Default is #000.
+ * $type - inset - is it an inset shadow or outset. Default is outset (outside the object)
+ */
+@mixin shadow( $x, $y, $blur, $spread, $color: #333333, $type: '' ) {
+	-moz-box-shadow		: $x $y $blur $spread $color #{$type};
+	-webkit-box-shadow	: $x $y $blur $spread $color #{$type};
+	box-shadow			: $x $y $blur $spread $color #{$type};
+	-ms-filter			: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=90, Color='$color')";
+	filter				: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=90, Color='$color');
+}
