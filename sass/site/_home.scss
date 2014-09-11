@@ -3,24 +3,23 @@
 
 	@media screen and (min-width: 768px) {
 		width: 29.88%;
-	}	
-}
-
-@media screen and (min-width: 768px) {
-	#home-left {
-		float: left;
-	}
-
-	#home-center {
 		float: left;
 		margin: 0 5%;
-	}
 
-	#home-right {
-		float: right;
-	}
+		&:first-child {
+			margin: 0;
+		}
 
-	.home-widgets {
+		&:last-child {
+			float: right;
+			margin: 0;
+		}
+	}
+}
+
+.home-widgets {
+
+	@media screen and (min-width: 768px) {
 		padding: 0 1em;
 		overflow: auto;
 	}

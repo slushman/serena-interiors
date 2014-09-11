@@ -21,7 +21,7 @@
 	@media only screen and (min-width: $maxwidth) {
 		margin: 0 0 4em 0 !important;
 		max-width: 100% !important;
-
+		height: 280px !important;
 	}
 
 	
@@ -77,7 +77,7 @@
 		top: inherit !important;
 		width: 100% !important;
 
-		@media only screen and (min-width: 900px) and (max-width: $maxwidth) {
+		@media only screen and (min-width: 900px) and (max-width: $maxwidth - 1) {
 			transform: translate(150%, -110%);
 			background-color: rgba( 20, 20, 20, 0.5 );
 			border-radius: 5px;
